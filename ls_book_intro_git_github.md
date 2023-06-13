@@ -96,9 +96,21 @@
 * **`git remote add origin https://github.com/GITHUBUSERNAME/REPONAME.git`**
 
 #### What Did We Just Do?
-* `git remote` is used to work with remote repos
-    * `add origin` links to the specified remote repo
-        * `origin` is an **alias** that is used to interact with a remote repo at a local level
+* **`git remote`** is used to work with remote repos
+    * **`add origin`** links to the specified remote repo
+        * **`origin`** is an **alias** that is used to interact with a remote repo at a local level
 
 #### git push
 * A local repo can **track** a remote branch
+* The **upstream repo** is defined as the default remote repo that is being tracked
+    * **`git push -u origin main`**
+
+#### git pull
+* When the upstream repo is ahead of our local repo, we can update our local repo with **`pull`**
+    * First, **`git fetch`** will grab the commit data for the changes made
+    * **`git diff`** can then be used to examine the differences between the current commit in the local and remote repos
+        * `---` removed lines
+        * `+++` added lines
+    * **`git pull -ff only`** grabs and applies the changes found within the remote repo
+        ** `ff` is the flag for the **fast forward merge** option
+        `pull` combines fetch and merge into one command
